@@ -17,6 +17,12 @@ class App extends Component {
       .then(passwords => this.setState({ passwords }));
   }
 
+  getJob = () => {
+    // Get the passwords and store them in state
+    fetch('/jobs')
+      .then(res => console.log(res));
+  }
+
   render() {
     const { passwords } = this.state;
 
@@ -44,18 +50,23 @@ class App extends Component {
               onClick={this.getPasswords}>
               Get More
             </button>
-          </div>
-        ) : (
-          // Render a helpful message otherwise
-          <div>
-            <h1>No passwords :(</h1>
             <button
               className="more"
-              onClick={this.getPasswords}>
-              Try Again?
+              onClick={this.getJob}>
+              Get More
             </button>
           </div>
-        )}
+        ) : (
+            // Render a helpful message otherwise
+            <div>
+              <h1>No passwords :(</h1>
+              <button
+                className="more"
+                onClick={this.getPasswords}>
+                Try Again?
+            </button>
+            </div>
+          )}
       </div>
     );
   }

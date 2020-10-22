@@ -24,7 +24,7 @@ app.get('/api/passwords', (req, res) => {
 
 app.get('/jobs', async (req, res) => {
   try {
-    console.log('jobs')
+    res.json("Job");
   } catch (error) {
     res.status(400).send('Error while getting list of jobs.Try again later.');
   }
