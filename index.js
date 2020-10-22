@@ -24,7 +24,7 @@ app.get('/api/passwords', (req, res) => {
 
 app.get('/jobs', async (req, res) => {
   try {
-    res.send('kiki');
+    console.log('jobs')
   } catch (error) {
     res.status(400).send('Error while getting list of jobs.Try again later.');
   }
@@ -33,7 +33,7 @@ app.get('/jobs', async (req, res) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;
